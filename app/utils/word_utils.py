@@ -2,7 +2,7 @@
 from app import db
 from app.api.models import Point
 import requests
-
+from app.config import Config
 def search_word(word: str) -> dict:
     """
     :rtype: dict
@@ -12,7 +12,7 @@ def search_word(word: str) -> dict:
     url = "https://wordsapiv1.p.rapidapi.com/words/%s" % word
 
     headers = {
-        "X-RapidAPI-Key": "03b058f235msh4586a487cc9934fp1abcacjsn118226d04cd0",
+        "X-RapidAPI-Key": Config.RAPIDAPI_KEY,
         "X-RapidAPI-Host": "wordsapiv1.p.rapidapi.com"
     }
 

@@ -1,0 +1,24 @@
+version: '3.7'
+
+services:
+  collector:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    command: gunicorn --bind 0.0.0.0:5005 --worker-class=gevent --workers=4 --threads=4 --worker-connections=1000 run:app
+    restart: unless-stopped
+    networks: 
+      - coder-net
+    expose:
+      - 5005
+    environment:
+      - RAPIDAPI_KEY=""
+    deploy:
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: 512M
+
+networks:
+    coder-net:
+      driver: bridge
