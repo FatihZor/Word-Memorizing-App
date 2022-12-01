@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}
+  {% if title %}
+    {{ title }}
+  {% else %}
+    Word Memorizing App
+  {% endif %}
+{% endblock %}
+
+{% block navbar %}
+  {% include 'navbar/navbar.html' %}
+{% endblock %}
+
+{% block content %}
+  <div class="container mt-3">
+    {% block app_content %}
+    {% endblock %}
+  </div>
+{% endblock %}
+{% block page_script %}
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}
+{% if title %}
+{{ title }}
+{% else %}
+Word Memorizing App
+{% endif %}
+{% endblock %}
+
+{% block navbar %}
+{% include 'navbar/navbar.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container mt-3">
+  {% block app_content %}
+  {% if count < 10 %} <div class="alert alert-warning">
+    <h5 class="text-center">You have {{count}} words in your library. You need at least 10 words to start the test.</h5>
+</div>
+{% else %}
+<div class="text-center">
+  <button id="start_practice" class="btn btn-success start-practice">Start Practice</button>
+</div>
+<div class="px-4 py-5 my-5 text-center" id="question_area" data-question-id="" style="display: none;">
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4" id="question_text"></p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <button type="button" class="btn btn-outline-secondary btn-lg px-4 answer-button"></button>
+      <button type="button" class="btn btn-outline-secondary btn-lg px-4 answer-button"></button>
+      <button type="button" class="btn btn-outline-secondary btn-lg px-4 answer-button"></button>
+    </div>
+  </div>
+  <div class="text-center mt-4">
+    <button id="new_question" class="btn btn-success start-practice">New Question</button>
+  </div>
+</div>
+
+{% endif %}
+{% endblock %}
+</div>
+{% endblock %}
+{% block page_script %}
+{% block ps %}
+{% endblock %}
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}
+{% if title %}
+{{ title }}
+{% else %}
+Word Memorizing App
+{% endif %}
+{% endblock %}
+
+{% block navbar %}
+{% include 'navbar/navbar.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container mt-3">
+  {% block app_content %}
+  <div class="card">
+    <div class="card-header d-flex justify-content-between ">
+      <h5>{{word.word}}</h5>
+      {% if word_in_library %}
+      <button id="in_the_library" class="btn btn-info" data-word-id="{{word.id}}" >The Word Is Already In The Library</button>
+      {% else %}
+      <button id="add_to_library" class="btn btn-success" data-word-id="{{word.id}}" >Add to Library</button>
+      {% endif %}
+    </div>
+    <div class="card-body">
+      {% for wd in word_definitions %}
+        <p class="card-text">{{wd.definition}}</p>
+      {% endfor %}
+    </div>
+  </div>
+  {% endblock %}
+</div>
+{% endblock %}
+{% block page_script %}
+{% endblock %}
