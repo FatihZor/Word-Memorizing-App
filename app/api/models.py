@@ -1,10 +1,8 @@
-from app import db, bcrypt
-from time import time
+from app import db
 from sqlalchemy.orm.exc import NoResultFound
-from sqlalchemy.orm import declarative_base, relationship
+from sqlalchemy.orm import declarative_base
 
 Base = declarative_base()
-
 
 class Word(db.Model):
     __tablename__ = 'words'

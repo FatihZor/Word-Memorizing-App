@@ -5,9 +5,6 @@ from flask_login import login_required, current_user
 from app import db
 from app.api.models import Word, WordDefinition, Library, Point
 from app.utils.word_utils import add_word_point
-from app.utils.json_utils import AlchemyEncoder
-
-import json
 
 api = Blueprint('api', __name__, url_prefix='/api')
 

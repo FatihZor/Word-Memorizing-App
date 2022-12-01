@@ -1,12 +1,13 @@
 
 from app import db
 from app.api.models import Point
+import requests
+
 def search_word(word: str) -> dict:
     """
     :rtype: dict
     :type word: str
     """
-    import requests
 
     url = "https://wordsapiv1.p.rapidapi.com/words/%s" % word
 

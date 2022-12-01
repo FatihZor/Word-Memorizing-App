@@ -1,10 +1,10 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash
+from flask import Blueprint, render_template, request, flash
 from flask_login import login_required, current_user
 
 main = Blueprint('main', __name__)
 
 from app import db
-from app.api.models import Word, WordDefinition, Library, Point
+from app.api.models import Word, WordDefinition, Library
 from app.utils.word_utils import search_word, add_word_point
 
 @main.route('/')

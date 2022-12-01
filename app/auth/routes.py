@@ -1,6 +1,6 @@
 from flask_login import login_user, logout_user, current_user
-from flask import Blueprint, render_template, request, flash, redirect, url_for, abort, session
-from app import bcrypt, db, login_manager
+from flask import Blueprint, render_template, request, flash, redirect, url_for
+from app import db, login_manager
 from app.config import Config
 
 from app.auth.models import User
