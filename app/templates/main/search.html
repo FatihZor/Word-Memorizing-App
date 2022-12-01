@@ -20,7 +20,9 @@ Word Memorizing App
       {% if word_in_library %}
       <button id="in_the_library" class="btn btn-info" data-word-id="{{word.id}}" >The Word Is Already In The Library</button>
       {% else %}
+      {% if word %}
       <button id="add_to_library" class="btn btn-success" data-word-id="{{word.id}}" >Add to Library</button>
+      {% endif %}
       {% endif %}
     </div>
     <div class="card-body">
