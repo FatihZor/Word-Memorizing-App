@@ -43,7 +43,7 @@ def search():
                         )
                         db.session.add(word_definition)
                         db.session.commit()
-                        add_word_point(user_id=current_user.id, word_id=word.id, point=1, reason="search")
+                    add_word_point(user_id=current_user.id, word_id=word.id, point=1, reason="search")
                     return render_template('main/search.html', word=word, word_definitions=Word.get_definitions(word.id), word_in_library=word_in_library)
             except:
                 flash('word or word definition not found', category='error')
